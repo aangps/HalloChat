@@ -2,7 +2,7 @@ package com.aangps01.hallochat;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import  androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.aangps01.hallochat.Adapter.SelectPsikiaterAdapter;
 import com.aangps01.hallochat.Model.User;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,11 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class PsikiaterMainActivity extends AppCompatActivity {
 
     CircleImageView profile_image;
     TextView email;
-    Button btn_private_konseling,btn_history;
+    Button btn_daftar_klien;
 
     FirebaseUser firebaseUser;
     DatabaseReference reference;
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_psikiater_main);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 if(user.getImageURL().equals("default")){
                     profile_image.setImageResource(R.mipmap.ic_launcher);
                 }else{
-                    Glide.with(MainActivity.this).load(user.getImageURL()).into(profile_image);
+                    Glide.with(PsikiaterMainActivity.this).load(user.getImageURL()).into(profile_image);
                 }
             }
 
@@ -68,19 +67,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_history = findViewById(R.id.btn_history);
-        btn_history.setOnClickListener(new View.OnClickListener() {
+        btn_daftar_klien = findViewById(R.id.btn_daftar_klien);
+        btn_daftar_klien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ChatHistory.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
-            }
-        });
-
-        btn_private_konseling = findViewById(R.id.btn_private_konseling);
-        btn_private_konseling.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SelectPsikiater.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                startActivity(new Intent(PsikiaterMainActivity.this, ChatHistory.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });
     }
@@ -96,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.logout:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                startActivity(new Intent(PsikiaterMainActivity.this,LoginActivity.class));
                 finish();
                 return true;
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PsikiaterMainActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -44,27 +44,27 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:layout_width="254dp"
-        android:layout_height="87dp"
+        android:layout_width="252dp"
+        android:layout_height="93dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="79dp"
-        android:text="HELLO......\nSELAMAT DATANG DI HELLOCHAT\nHELLOCHAT SELALU ADA UNTUKMU"
+        android:text="HELLO DOK.....\nSELAMAT DATANG DI HELLOCHAT\nBANTU KLIENMU UNTUK MEMECAHKAN MASALAHNYA"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintVertical_bias="0.285">
 
     </TextView>
-    
+
 
     <Button
-        android:id="@+id/btn_private_konseling"
-        android:layout_width="219dp"
-        android:layout_height="50dp"
+        android:id="@+id/btn_daftar_klien"
+        android:layout_width="163dp"
+        android:layout_height="51dp"
         android:layout_marginTop="113dp"
         android:background="@drawable/button_primary"
-        android:text="Mulai Private Konseling"
+        android:text="Daftar Klien"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -85,26 +85,15 @@
         android:adjustViewBounds="true"/>
 
     <Button
-        android:id="@+id/btn_history"
-        android:layout_width="45dp"
-        android:layout_height="35dp"
-        android:background="@drawable/ic_history"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/home"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.533" />
-
-    <Button
         android:id="@+id/home"
         android:layout_width="45dp"
         android:layout_height="35dp"
+        android:layout_marginStart="96dp"
         android:background="@drawable/ic_home_active"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintVertical_bias="0.551" />
 
     <Button
         android:id="@+id/profil"
@@ -113,8 +102,9 @@
         android:background="@drawable/ic_profile"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.573"
         app:layout_constraintStart_toEndOf="@+id/home"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.551" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

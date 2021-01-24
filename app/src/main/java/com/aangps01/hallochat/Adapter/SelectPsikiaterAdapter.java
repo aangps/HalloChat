@@ -18,12 +18,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
+public class SelectPsikiaterAdapter extends RecyclerView.Adapter<SelectPsikiaterAdapter.ViewHolder> {
 
     private Context mContext;
     private List<User> mUsers;
 
-    public UserAdapter(Context mContext, List<User> mUsers) {
+    public SelectPsikiaterAdapter(Context mContext, List<User> mUsers) {
         this.mContext = mContext;
         this.mUsers = mUsers;
     }
@@ -31,8 +31,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.user_item,parent,false);
-        return new UserAdapter.ViewHolder(view);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.select_psikiater_item,parent,false);
+        return new SelectPsikiaterAdapter.ViewHolder(view);
     }
 
     @Override
@@ -44,6 +44,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }else{
             Glide.with(mContext).load(user.getImageURL()).into(holder.profile_image);
         }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

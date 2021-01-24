@@ -11,19 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectPsikiater"></activity>
-        <activity android:name=".AdminMainActivity" />
-        <activity android:name=".WelcomeTwo" />
-        <activity android:name=".WelcomeOne" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".PsikiaterMainActivity"></activity>
+        <activity android:name=".ChatHistory" android:screenOrientation="portrait"/>
+        <activity android:name=".MessageUser" android:screenOrientation="portrait"/>
+        <activity android:name=".SelectPsikiater" android:screenOrientation="portrait"/>
+        <activity android:name=".AdminMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".WelcomeTwo" android:screenOrientation="portrait"/>
+        <activity android:name=".WelcomeOne" android:screenOrientation="portrait"/>
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RegisterActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
